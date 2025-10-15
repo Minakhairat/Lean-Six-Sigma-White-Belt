@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lean Six Sigma White Belt Training</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         :root {
             --primary: #2c3e50;
@@ -14,7 +12,6 @@
             --light: #ecf0f1;
             --dark: #2c3e50;
             --success: #27ae60;
-            --warning: #f39c12;
             --card-bg: #ffffff;
             --text: #333333;
             --shadow: rgba(0, 0, 0, 0.1);
@@ -185,11 +182,6 @@
         .about {
             padding: 4rem 0;
             background-color: var(--card-bg);
-        }
-
-        .exam-section {
-            padding: 4rem 0;
-            background-color: var(--light);
         }
 
         .section-title {
@@ -403,238 +395,6 @@
             margin-bottom: 10px;
         }
 
-        /* Exam Styles */
-        .exam-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px var(--shadow);
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .exam-form {
-            margin-top: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: right;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .exam-info {
-            background-color: rgba(52, 152, 219, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .exam-info ul {
-            list-style-type: none;
-            padding-right: 0;
-        }
-
-        .exam-info li {
-            margin-bottom: 8px;
-        }
-
-        /* Exam Interface */
-        .exam-interface {
-            display: none;
-        }
-
-        .exam-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .timer {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--accent);
-        }
-
-        .question-counter {
-            font-size: 1rem;
-            color: var(--text);
-        }
-
-        .question {
-            margin-bottom: 25px;
-        }
-
-        .question-text {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .options {
-            list-style-type: none;
-        }
-
-        .option {
-            margin-bottom: 10px;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .option:hover {
-            background-color: rgba(52, 152, 219, 0.1);
-        }
-
-        .option.selected {
-            background-color: var(--secondary);
-            color: white;
-        }
-
-        .exam-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-
-        .exam-results {
-            display: none;
-            text-align: center;
-            padding: 30px;
-        }
-
-        .results-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        .success {
-            color: var(--success);
-        }
-
-        .failure {
-            color: var(--accent);
-        }
-
-        .score {
-            font-size: 2rem;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-
-        .certificate-download {
-            margin-top: 30px;
-        }
-
-        /* Certificate Styles */
-        .certificate {
-            display: none;
-            background: white;
-            padding: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-            border: 15px solid #f1c40f;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            position: relative;
-            text-align: center;
-        }
-
-        .certificate::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
-            border: 2px solid #3498db;
-            pointer-events: none;
-        }
-
-        .certificate-header {
-            margin-bottom: 30px;
-        }
-
-        .certificate-title {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .certificate-subtitle {
-            font-size: 1.5rem;
-            color: #3498db;
-            margin-bottom: 5px;
-        }
-
-        .certificate-body {
-            margin: 40px 0;
-        }
-
-        .certificate-text {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .student-name {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin: 30px 0;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-
-        .certificate-footer {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 60px;
-        }
-
-        .signature {
-            text-align: center;
-            width: 45%;
-        }
-
-        .signature-line {
-            border-top: 1px solid #2c3e50;
-            margin: 40px 0 10px;
-        }
-
-        .signature-name {
-            font-weight: bold;
-            margin-top: 5px;
-        }
-
-        .signature-title {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-        }
-
-        .certificate-logo {
-            max-width: 150px;
-            margin-bottom: 20px;
-        }
-
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -699,15 +459,6 @@
             .cards-container {
                 grid-template-columns: 1fr;
             }
-            
-            .certificate-footer {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .signature {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -722,7 +473,6 @@
                     <li><a href="#home" id="navHome">الرئيسية</a></li>
                     <li><a href="#modules" id="navModules">الوحدات</a></li>
                     <li><a href="#about" id="navAbout">عن البرنامج</a></li>
-                    <li><a href="#exam" id="navExam">الامتحان</a></li>
                     <li><a href="#contact" id="navContact">اتصل بنا</a></li>
                 </ul>
             </nav>
@@ -770,91 +520,6 @@
                         <h4 id="feature3Title">شهادة معتمدة</h4>
                         <p id="feature3Desc">شهادة إتمام معتمدة من إدارة العمليات والجودة بالمصنع</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="exam-section" id="exam">
-        <div class="container">
-            <h2 class="section-title" id="examTitle">امتحان الشهادة</h2>
-            
-            <!-- Exam Registration Card -->
-            <div class="exam-card" id="examRegistration">
-                <h3>تسجيل الدخول للامتحان</h3>
-                <div class="exam-info">
-                    <ul>
-                        <li>الامتحان يتكون من 20 سؤال اختياري</li>
-                        <li>مدة الامتحان: 30 دقيقة</li>
-                        <li>لاجتياز الامتحان يجب تحقيق 70% على الأقل</li>
-                        <li>سيتم إصدار شهادة إلكترونية فور اجتياز الامتحان</li>
-                    </ul>
-                </div>
-                <div class="exam-form">
-                    <div class="form-group">
-                        <label for="studentName">الاسم بالكامل (كما سيظهر على الشهادة)</label>
-                        <input type="text" id="studentName" placeholder="أدخل اسمك بالكامل">
-                    </div>
-                    <button class="cta-button" id="startExam">بدء الامتحان</button>
-                </div>
-            </div>
-            
-            <!-- Exam Interface -->
-            <div class="exam-interface" id="examInterface">
-                <div class="exam-header">
-                    <div class="timer" id="timer">30:00</div>
-                    <div class="question-counter" id="questionCounter">السؤال 1 من 20</div>
-                </div>
-                
-                <div class="question" id="questionContainer">
-                    <!-- Questions will be loaded here dynamically -->
-                </div>
-                
-                <div class="exam-navigation">
-                    <button class="cta-button" id="prevQuestion" disabled>السؤال السابق</button>
-                    <button class="cta-button" id="nextQuestion">السؤال التالي</button>
-                    <button class="cta-button" id="submitExam" style="display: none;">إنهاء الامتحان</button>
-                </div>
-            </div>
-            
-            <!-- Exam Results -->
-            <div class="exam-results" id="examResults">
-                <!-- Results will be shown here -->
-            </div>
-            
-            <!-- Certificate -->
-            <div class="certificate" id="certificate">
-                <div class="certificate-header">
-                    <h1 class="certificate-title">شهادة إتمام</h1>
-                    <h2 class="certificate-subtitle">برنامج Lean Six Sigma White Belt</h2>
-                    <p>شركة فريش للأجهزة المنزلية</p>
-                    <p>مصنع المبرد الصحراوي والميكروويف</p>
-                    <p>إدارة العمليات والجودة</p>
-                </div>
-                
-                <div class="certificate-body">
-                    <p class="certificate-text">تهنئ إدارة العمليات والجودة</p>
-                    <h2 class="student-name" id="certificateName">اسم الطالب</h2>
-                    <p class="certificate-text">لاجتيازه امتحان Lean Six Sigma White Belt بنجاح</p>
-                    <p class="certificate-text">وذلك تقديراً لجهوده في إكمال البرنامج التدريبي بنجاح والتزامه بتطبيق مبادئ الجودة والتحسين المستمر</p>
-                </div>
-                
-                <div class="certificate-footer">
-                    <div class="signature">
-                        <div class="signature-line"></div>
-                        <div class="signature-name">مدير إدارة العمليات</div>
-                        <div class="signature-title">إدارة العمليات والجودة</div>
-                    </div>
-                    
-                    <div class="signature">
-                        <div class="signature-line"></div>
-                        <div class="signature-name">مدير المصنع</div>
-                        <div class="signature-title">مصنع المبرد الصحراوي والميكروويف</div>
-                    </div>
-                </div>
-                
-                <div class="certificate-download">
-                    <button class="cta-button" id="downloadCertificate">تحميل الشهادة PDF</button>
                 </div>
             </div>
         </div>
@@ -930,7 +595,497 @@
                     </ul>
                 `
             },
-            // ... باقي الوحدات (نفس المحتوى السابق)
+            {
+                id: 2,
+                title: "مبادئ الـ Lean (التصنيع الرشيق)",
+                progress: 0,
+                content: `
+                    <h3>أنواع الهدر الثمانية (The 8 Wastes)</h3>
+                    <ol>
+                        <li><strong>الإنتاج الزائد:</strong> إنتاج كميات أكبر من المطلوب</li>
+                        <li><strong>الانتظار:</strong> توقف العمال أو المعدات بانتظار مواد أو تعليمات</li>
+                        <li><strong>النقل:</strong> نقل المواد لمسافات طويلة أو بشكل متكرر</li>
+                        <li><strong>العمليات غير الضرورية:</strong> خطوات إضافية لا تضيف قيمة</li>
+                        <li><strong>المخزون الزائد:</strong> تخزين مواد أكثر من الحاجة الفعلية</li>
+                        <li><strong>الحركات غير الفعالة:</strong> تحرك العمال أكثر من اللازم لأداء المهام</li>
+                        <li><strong>العيوب:</strong> منتجات معيبة تحتاج إصلاح أو إهدار</li>
+                        <li><strong>هدر المواهب:</strong> عدم استغلال مهارات وخبرات العمال</li>
+                    </ol>
+                    
+                    <h3>كيف تكشف الهدر في مكان عملك؟</h3>
+                    <p>اسأل نفسك هذه الأسئلة:</p>
+                    <ul>
+                        <li>هل يتقضي وقت في انتظار حاجة؟</li>
+                        <li>هل ينتجرك أكثر من اللازم للشغل؟</li>
+                        <li>هل في خطوات في الشغل مش ضرورية؟</li>
+                        <li>هل في أدوات أو مواد مش بنستخدمها؟</li>
+                        <li>هل في منتجات بتطلع معيبة؟</li>
+                    </ul>
+                `
+            },
+            {
+                id: 3,
+                title: "مبادئ Six Sigma",
+                progress: 0,
+                content: `
+                    <h3>الخمس خطوات الذهبية - منهجية DMAIC</h3>
+                    
+                    <h4>1. Define (تحديد)</h4>
+                    <p><strong>الهدف:</strong> فهم المشكلة بوضوح</p>
+                    <ul>
+                        <li>تحديد المشكلة بدقة</li>
+                        <li>معرفة من المتأثر بها</li>
+                        <li>تحديد الهدف من الحل</li>
+                    </ul>
+                    
+                    <h4>2. Measure (قياس)</h4>
+                    <p><strong>الهدف:</strong> جمع بيانات دقيقة عن المشكلة</p>
+                    <ul>
+                        <li>قياس الوضع الحالي</li>
+                        <li>جمع بيانات رقمية</li>
+                        <li>تحديد مقاييس الأداء</li>
+                    </ul>
+                    
+                    <h4>3. Analyze (تحليل)</h4>
+                    <p><strong>الهدف:</strong> فهم أسباب المشكلة الحقيقية</p>
+                    <ul>
+                        <li>تحليل البيانات</li>
+                        <li>البحث عن الأسباب الجذرية</li>
+                        <li>استخدام أدوات التحليل</li>
+                    </ul>
+                    
+                    <h4>4. Improve (تحسين)</h4>
+                    <p><strong>الهدف:</strong> تطوير وتنفيذ الحلول</p>
+                    <ul>
+                        <li>تطوير حلول مبتكرة</li>
+                        <li>اختبار الحلول على نطاق صغير</li>
+                        <li>تنفيذ الحل النهائي</li>
+                    </ul>
+                    
+                    <h4>5. Control (تحكم)</h4>
+                    <p><strong>الهدف:</strong> الحفاظ على التحسين مستمراً</p>
+                    <ul>
+                        <li>متابعة النتائج</li>
+                        <li>توثيق الإجراءات</li>
+                        <li>تدريب العمال الجدد</li>
+                    </ul>
+                `
+            },
+            {
+                id: 4,
+                title: "أدوار ومستويات الأحزمة في Six Sigma",
+                progress: 0,
+                content: `
+                    <h3>مستويات الأحزمة والمسؤوليات</h3>
+                    
+                    <h4>1. White Belt (الحزام الأبيض) - ده انتوا</h4>
+                    <p><strong>المسؤوليات:</strong></p>
+                    <ul>
+                        <li>الفهم الأساسي للمبادئ</li>
+                        <li>المشاركة في التحسينات البسيطة</li>
+                        <li>تقديم ملاحظات ومقترحات</li>
+                        <li>تطبيق أدوات الجودة الأساسية</li>
+                    </ul>
+                    
+                    <h4>2. Yellow Belt (الحزام الأصفر)</h4>
+                    <p><strong>المسؤوليات:</strong></p>
+                    <ul>
+                        <li>المشاركة في فرق التحسين</li>
+                        <li>جمع البيانات والمعلومات</li>
+                        <li>تطبيق أدوات الجودة البسيطة</li>
+                        <li>دعم مشاريع التحسين</li>
+                    </ul>
+                    
+                    <h4>3. Green Belt (الحزام الأخضر)</h4>
+                    <p><strong>المسؤوليات:</strong></p>
+                    <ul>
+                        <li>قيادة مشاريع تحسين متوسطة</li>
+                        <li>تحليل البيانات المتقدمة</li>
+                        <li>تدريب وتوجيه White Belts</li>
+                        <li>تطبيق منهجية DMAIC</li>
+                    </ul>
+                    
+                    <h4>4. Black Belt (الحزام الأسود)</h4>
+                    <p><strong>المسؤوليات:</strong></p>
+                    <ul>
+                        <li>قيادة مشاريع استراتيجية كبرى</li>
+                        <li>تدريب وإشراف على الفرق</li>
+                        <li>تطوير استراتيجيات التحسين</li>
+                        <li>قيادة مبادرات التحول</li>
+                    </ul>
+                    
+                    <h3>خطة التطور الوظيفي في فريش</h3>
+                    <p><strong>من White Belt إلى Yellow Belt:</strong></p>
+                    <ul>
+                        <li>المشاركة في 3 مشاريع تحسين</li>
+                        <li>تقديم 5 أفكار تحسين ناجحة</li>
+                        <li>اجتياز امتحان الترقية</li>
+                    </ul>
+                `
+            },
+            {
+                id: 5,
+                title: "دورة PDCA للتطوير المستمر",
+                progress: 0,
+                content: `
+                    <h3>ما هي دورة PDCA؟</h3>
+                    <p>دورة مستمرة للتحسين تتكون من:</p>
+                    <ul>
+                        <li><strong>P = Plan (التخطيط)</strong></li>
+                        <li><strong>D = Do (التنفيذ)</strong></li>
+                        <li><strong>C = Check (المراجعة)</strong></li>
+                        <li><strong>A = Act (التطوير)</strong></li>
+                    </ul>
+                    
+                    <h3>1. PLAN (التخطيط)</h3>
+                    <p><strong>خطوات التخطيط:</strong></p>
+                    <ul>
+                        <li>حدد المشكلة: ما هي المشكلة بالتحديد؟</li>
+                        <li>افهم الوضع الحالي: كيف تحدث المشكلة الآن؟</li>
+                        <li>حلل الأسباب: لماذا تحدث المشكلة؟</li>
+                        <li>ضع الأهداف: ماذا تريد تحقيقه؟</li>
+                        <li>خطط للحل: كيف ستحل المشكلة؟</li>
+                    </ul>
+                    
+                    <h3>2. DO (التنفيذ)</h3>
+                    <p><strong>خطوات التنفيذ:</strong></p>
+                    <ul>
+                        <li>نفذ الخطة: طبق الحلول</li>
+                        <li>اجمع البيانات: سجل ما يحدث</li>
+                        <li>سجل التغييرات: اكتب كل التعديلات</li>
+                    </ul>
+                    
+                    <h3>3. CHECK (المراجعة)</h3>
+                    <p><strong>خطوات المراجعة:</strong></p>
+                    <ul>
+                        <li>قارن النتائج: قبل وبعد التنفيذ</li>
+                        <li>حلل البيانات: هل تحققت الأهداف؟</li>
+                        <li>تعلم من التجربة: ما الدروس المستفادة؟</li>
+                    </ul>
+                    
+                    <h3>4. ACT (التطوير)</h3>
+                    <p><strong>خطوات التطوير:</strong></p>
+                    <ul>
+                        <li>ثبت النجاح: إذا نجح الحل، طبقه بشكل دائم</li>
+                        <li>عدل الخطة: إذا لم ينجح، عدل وحسن</li>
+                        <li>وسع النطاق: طبق على كل الخطوط المماثلة</li>
+                    </ul>
+                    
+                    <h3>العلاقة بين PDCA و DMAIC</h3>
+                    <ul>
+                        <li>PDCA = للتحسينات السريعة والمستمرة</li>
+                        <li>DMAIC = للمشاكل المعقدة والعميقة</li>
+                        <li>الإثنان معاً = نظام تحسين متكامل</li>
+                    </ul>
+                `
+            },
+            {
+                id: 6,
+                title: "ثقافة الكايزن (Kaizen)",
+                progress: 0,
+                content: `
+                    <h3>ما هو الكايزن؟</h3>
+                    <p><strong>المعنى الحرفي:</strong></p>
+                    <ul>
+                        <li>Kai = التغيير</li>
+                        <li>Zen = للأفضل</li>
+                        <li>المعنى: التحسين المستمر للأفضل</li>
+                    </ul>
+                    
+                    <h3>فلسفة الكايزن</h3>
+                    <ol>
+                        <li><strong>التغييرات الصغيرة المستمرة:</strong> لا تنتظر تحسينات كبيرة، تحسينات صغيرة يومية أفضل</li>
+                        <li><strong>مشاركة الجميع:</strong> من المدير إلى آخر عامل، كل فكرة لها قيمتها</li>
+                        <li><strong>التركيز على العمليات:</strong> تحسين العمليات يؤدي لتحسين النتائج</li>
+                    </ol>
+                    
+                    <h3>أنشطة الكايزن في مصنع فريش</h3>
+                    <ol>
+                        <li><strong>مقترحات التحسين الفردية:</strong> كل عامل يقدم مقترحات أسبوعية، نظام مكافآت للأفكار المطبقة</li>
+                        <li><strong>فرق التحسين الصغيرة:</strong> فرق صغيرة لحل مشاكل محددة، اجتماعات أسبوعية سريعة</li>
+                        <li><strong>فعاليات الكايزن المركزة:</strong> أنشطة مكثفة لمدة أسبوع، تركيز على مشكلة محددة</li>
+                    </ol>
+                    
+                    <h3>كيف تطبق الكايزن يومياً؟</h3>
+                    <p><strong>خطوات عملية:</strong></p>
+                    <ol>
+                        <li>لاحظ: المشكلة أو area للتحسين</li>
+                        <li>حلل: السبب الجذري</li>
+                        <li>اقترح: حلاً بسيطاً</li>
+                        <li>نفذ: على نطاق صغير</li>
+                        <li>راجع: النتائج</li>
+                        <li>عمم: النجاح</li>
+                    </ol>
+                    
+                    <h3>مبادئ الكايزن الأساسية</h3>
+                    <ol>
+                        <li>تخلص من التفكير التقليدي: "ده شغال، متحاول"، "دائماً في مجال للتحسين"</li>
+                        <li>إبحث عن الحلول وليس الأعذار: "مش نفع قبل كده؟"، "هنجرب طريقة جديدة"</li>
+                        <li>جرب ثم صحح: "لازم تكون مظبوط 100% من أول مرة" ← "جرب، تعلم، طور"</li>
+                        <li>البيئة المناسبة للتحسين: مفيش عقاب على الأخطاء، تشجيع المبادرات، تقدير المجهود</li>
+                    </ol>
+                `
+            },
+            {
+                id: 7,
+                title: "نظام 5S لتنظيم مكان العمل",
+                progress: 0,
+                content: `
+                    <h3>ما هو نظام 5S؟</h3>
+                    <p>نظام ياباني لتنظيم مكان العمل يتكون من:</p>
+                    <ul>
+                        <li><strong>SEIRI = التصنيف</strong></li>
+                        <li><strong>SEITON = الترتيب</strong></li>
+                        <li><strong>SEISO = التنظيف</strong></li>
+                        <li><strong>SEIKETSU = التوحيد</strong></li>
+                        <li><strong>SHITSUKE = الاستمرارية</strong></li>
+                    </ul>
+                    
+                    <h3>1. SEIRI (التصنيف)</h3>
+                    <p><strong>المبدأ:</strong> تخلص من ما لا تحتاجه</p>
+                    <p><strong>التطبيق في مصنع فريش:</strong></p>
+                    <ul>
+                        <li>أزل الأدوات والمواد الزائدة</li>
+                        <li>احتفظ بما تستخدمه فقط يومياً</li>
+                        <li>تخلص من المعدات المعطلة</li>
+                    </ul>
+                    
+                    <h3>2. SEITON (الترتيب)</h3>
+                    <p><strong>المبدأ:</strong> كل شيء في مكانه المحدد</p>
+                    <p><strong>التطبيق في المصنع:</strong></p>
+                    <ul>
+                        <li>ضع علامات وألوان للأدوات</li>
+                        <li>نظم المواد لأسهل وصول</li>
+                        <li>استخدم رفوف وأدراج منظمة</li>
+                    </ul>
+                    
+                    <h3>3. SEISO (التنظيف)</h3>
+                    <p><strong>المبدأ:</strong> النظافة جزء من العمل</p>
+                    <p><strong>التطبيق في المصنع:</strong></p>
+                    <ul>
+                        <li>نظف مكان العمل يومياً</li>
+                        <li>حافظ على نظافة المعدات</li>
+                        <li>حدد مسؤوليات التنظيف</li>
+                    </ul>
+                    
+                    <h3>4. SEIKETSU (التوحيد)</h3>
+                    <p><strong>المبدأ:</strong> نظام موحد للجميع</p>
+                    <p><strong>التطبيق في المصنع:</strong></p>
+                    <ul>
+                        <li>وضع إجراءات موحدة</li>
+                        <li>تدريب جميع العمال</li>
+                        <li>معايير واضحة للجميع</li>
+                    </ul>
+                    
+                    <h3>5. SHITSUKE (الاستمرارية)</h3>
+                    <p><strong>المبدأ:</strong> الحفاظ على النظام</p>
+                    <p><strong>التطبيق في المصنع:</strong></p>
+                    <ul>
+                        <li>مراجعة دورية</li>
+                        <li>تحفيز الملتزمين</li>
+                        <li>تحسين مستمر</li>
+                    </ul>
+                `
+            },
+            {
+                id: 8,
+                title: "أدوات تحليل المشاكل المتقدمة",
+                progress: 0,
+                content: `
+                    <h3>1. مخطط عظمة السمكة (إيشيكاوا)</h3>
+                    <p><strong>ما هو؟</strong> مخطط يشبه عظمة السمكة، ينظم الأسباب المحتملة للمشكلة، يساعد في التحليل الشامل</p>
+                    
+                    <h4>كيف نستخدمه في فريش؟</h4>
+                    <p><strong>خطوات التطبيق:</strong></p>
+                    <ol>
+                        <li>اكتب المشكلة في رأس السمكة</li>
+                        <li>ارسم الخطوط الرئيسية (عظام السمكة)</li>
+                        <li>حدد الفئات الرئيسية للأسباب</li>
+                        <li>أضف الأسباب التفصيلية تحت كل فئة</li>
+                    </ol>
+                    
+                    <p><strong>الفئات الرئيسية (6M):</strong></p>
+                    <ul>
+                        <li>المواد - الخامات، المكونات (Materials)</li>
+                        <li>المعدات - الماكينات، الأدوات (Machines)</li>
+                        <li>الأفراد - العمال، المهارات (Manpower)</li>
+                        <li>الطرق - الإجراءات، التعليمات (Methods)</li>
+                        <li>القياس - أدوات القياس، المعايير (Measurement)</li>
+                        <li>البيئة - المكان، الظروف (Environment)</li>
+                    </ul>
+                    
+                    <h3>2. تحليل باريتو (Pareto)</h3>
+                    <p><strong>ما هو؟</strong> قاعدة 80/20: 80% من المشاكل سببها 20% من الأسباب، يساعد في تحديد الأولويات</p>
+                    
+                    <h4>كيف نطبقه في فريش؟</h4>
+                    <p><strong>خطوات التطبيق:</strong></p>
+                    <ol>
+                        <li>جمع البيانات عن المشاكل</li>
+                        <li>رتبها تنازلياً حسب التكرار</li>
+                        <li>احسب النسبة المئوية لكل مشكلة</li>
+                        <li>احسب النسبة التراكمية</li>
+                        <li>حدد المشاكل الحرجة (الـ 20%)</li>
+                    </ol>
+                    
+                    <h3>3. تقنية 5 Whys</h3>
+                    <p><strong>المبدأ البسيط:</strong> اسأل "ليه" 5 مرات عشان توصل للسبب الجذري</p>
+                    
+                    <h4>خطوات التطبيق:</h4>
+                    <ol>
+                        <li>اكتب المشكلة بوضوح</li>
+                        <li>اسأل "ليه حدثت المشكلة؟"</li>
+                        <li>اكتب الإجابة</li>
+                        <li>كرر السؤال 5 مرات</li>
+                        <li>توصل للسبب الجذري</li>
+                    </ol>
+                    
+                    <h3>4. مخطط التدفق (Flow Chart)</h3>
+                    <p><strong>ما هو؟</strong> رسم بياني يوضح خطوات العملية، يساعد في فهم العمليات وتحديد مناطق التحسين</p>
+                    
+                    <h4>رموز المخطط:</h4>
+                    <ul>
+                        <li>بيضاوي = بداية/نهاية</li>
+                        <li>مستطيل = خطوة عملية</li>
+                        <li>معين = قرار (نعم/لا)</li>
+                        <li>أسهم = اتجاه التدفق</li>
+                    </ul>
+                `
+            },
+            {
+                id: 9,
+                title: "مؤشرات الأداء والجودة",
+                progress: 0,
+                content: `
+                    <h3>ما هي مؤشرات الأداء؟</h3>
+                    <p>أرقام وبيانات تقيس أداء العمليات وجودة المنتج، تساعد في:</p>
+                    <ul>
+                        <li>تقييم الوضع الحالي</li>
+                        <li>تحديد المشاكل</li>
+                        <li>قياس التحسين</li>
+                        <li>اتخاذ القرارات</li>
+                    </ul>
+                    
+                    <h3>أنواع المؤشرات في مصنع فريش</h3>
+                    
+                    <h4>1. مؤشرات الجودة</h4>
+                    <ul>
+                        <li><strong>معدل العيوب:</strong> نسبة المنتجات المعيبة من الإجمالي</li>
+                        <li><strong>معدل إعادة العمل:</strong> نسبة المنتجات التي تحتاج إصلاح</li>
+                        <li><strong>شكاوى العملاء:</strong> عدد وتكرار الشكاوى</li>
+                    </ul>
+                    
+                    <h4>2. مؤشرات الإنتاجية</h4>
+                    <ul>
+                        <li><strong>معدل الإنتاج:</strong> عدد الوحدات المنتجة في الساعة</li>
+                        <li><strong>وقت الدورة:</strong> الوقت اللازم لإنتاج وحدة واحدة</li>
+                        <li><strong>استخدام المعدات:</strong> نسبة الوقت الفعلي للعمل</li>
+                    </ul>
+                    
+                    <h4>3. مؤشرات السلامة</h4>
+                    <ul>
+                        <li><strong>الحوادث:</strong> عدد الحوادث والإصابات</li>
+                        <li><strong>أيام العمل المفقودة:</strong> أيام التوقف بسبب الحوادث</li>
+                        <li><strong>مخالفات السلامة:</strong> عدد المخالفات المكتشفة</li>
+                    </ul>
+                    
+                    <h3>كيف تقرأ وتستخدم المؤشرات؟</h3>
+                    <p><strong>خطوات عملية:</strong></p>
+                    <ol>
+                        <li>افهم معنى المؤشر</li>
+                        <li>قارن مع الهدف المطلوب</li>
+                        <li>حلل اتجاه التغير (يتحسن أم يزداد سوءاً)</li>
+                        <li>ابحث عن الأسباب</li>
+                        <li>اتخذ إجراءً تصحيحياً</li>
+                    </ol>
+                    
+                    <h3>لوحات التحكم البصرية</h3>
+                    <p><strong>ما هي؟</strong> لوحات توضح المؤشرات بشكل مرئي بسيط، تساعد في:</p>
+                    <ul>
+                        <li>متابعة الأداء بسهولة</li>
+                        <li>اكتشاف المشاكل بسرعة</li>
+                        <li>مشاركة المعلومات مع الجميع</li>
+                    </ul>
+                    
+                    <h4>أنواع اللوحات في فريش:</h4>
+                    <ul>
+                        <li>لوحات الإنتاج اليومي</li>
+                        <li>لوحات الجودة</li>
+                        <li>لوحات السلامة</li>
+                        <li>لوحات التحسين</li>
+                    </ul>
+                `
+            },
+            {
+                id: 10,
+                title: "التطبيق العملي في مصنع فريش",
+                progress: 0,
+                content: `
+                    <h3>كيف نطبق Lean Six Sigma في مصنع فريش؟</h3>
+                    
+                    <h4>1. في خط إنتاج المبرد الصحراوي</h4>
+                    <p><strong>مجالات التحسين:</strong></p>
+                    <ul>
+                        <li>تقليل وقت تجميع الوحدة</li>
+                        <li>تحسين جودة اللحام</li>
+                        <li>تقليل هدر المواد الخام</li>
+                        <li>تحسين كفاءة الاختبار النهائي</li>
+                    </ul>
+                    
+                    <h4>2. في خط إنتاج الميكروويف</h4>
+                    <p><strong>مجالات التحسين:</strong></p>
+                    <ul>
+                        <li>تحسين دقة تركيب المكونات الإلكترونية</li>
+                        <li>تقليل أعمال إعادة اللحام</li>
+                        <li>تحسين كفاءة الفحص البصري</li>
+                        <li>تقليل وقت ضبط المعايرة</li>
+                    </ul>
+                    
+                    <h3>مشاريع تحسين محددة للعمال</h3>
+                    
+                    <h4>مشروع 1: تحسين تنظيم مكان العمل</h4>
+                    <p><strong>الأهداف:</strong></p>
+                    <ul>
+                        <li>تطبيق نظام 5S في جميع المحطات</li>
+                        <li>تقليل وقت البحث عن الأدوات بنسبة 50%</li>
+                        <li>تحسين السلامة في مكان العمل</li>
+                    </ul>
+                    
+                    <h4>مشروع 2: تقليل العيوب في اللحام</h4>
+                    <p><strong>الأهداف:</strong></p>
+                    <ul>
+                        <li>تقليل نسبة اللحام المعيب من 5% إلى 2%</li>
+                        <li>توحيد إجراءات اللحام</li>
+                        <li>تدريب جميع عمال اللحام</li>
+                    </ul>
+                    
+                    <h4>مشروع 3: تحسين كفاءة خط التجميع</h4>
+                    <p><strong>الأهداف:</strong></p>
+                    <ul>
+                        <li>موازنة خط الإنتاج</li>
+                        <li>تقليل وقت الانتظار بين المحطات</li>
+                        <li>زيادة الإنتاجية بنسبة 15%</li>
+                    </ul>
+                    
+                    <h3>دورك كـ White Belt في التحسين</h3>
+                    <p><strong>مسؤولياتك:</strong></p>
+                    <ul>
+                        <li>تقديم مقترحات تحسين أسبوعية</li>
+                        <li>المشاركة في فرق التحسين</li>
+                        <li>تطبيق أدوات الجودة في عملك</li>
+                        <li>المساعدة في جمع البيانات</li>
+                        <li>نشر ثقافة الجودة بين زملائك</li>
+                    </ul>
+                    
+                    <h3>نظام المكافآت والتقدير</h3>
+                    <p><strong>أنواع المكافآت:</strong></p>
+                    <ul>
+                        <li>مكافآت مالية للأفكار المطبقة</li>
+                        <li>شهادات تقدير للتميز</li>
+                        <li>ترقيات وظيفية للمتميزين</li>
+                        <li>تكريم شهري لأفضل مقترح تحسين</li>
+                    </ul>
+                `
+            }
         ];
 
         // الترجمة للغة الإنجليزية
@@ -963,210 +1118,496 @@
                     </ul>
                 `
             },
-            // ... باقي الوحدات (نفس المحتوى السابق)
-        ];
-
-        // أسئلة الامتحان
-        const examQuestions = [
             {
-                question: "ما هو الهدف الرئيسي من منهجية الـ Lean؟",
-                options: [
-                    "التخلص من الهدر في جميع العمليات",
-                    "زيادة عدد العاملين في المصنع",
-                    "شراء معدات جديدة",
-                    "زيادة ساعات العمل"
-                ],
-                correct: 0
+                id: 2,
+                title: "Lean Principles",
+                progress: 0,
+                content: `
+                    <h3>The 8 Types of Waste</h3>
+                    <ol>
+                        <li><strong>Overproduction:</strong> Producing more than required</li>
+                        <li><strong>Waiting:</strong> Workers or equipment idle waiting for materials or instructions</li>
+                        <li><strong>Transportation:</strong> Moving materials long distances or frequently</li>
+                        <li><strong>Unnecessary Processing:</strong> Extra steps that add no value</li>
+                        <li><strong>Excess Inventory:</strong> Storing more materials than needed</li>
+                        <li><strong>Inefficient Movement:</strong> Workers moving excessively to perform tasks</li>
+                        <li><strong>Defects:</strong> Faulty products needing repair or waste</li>
+                        <li><strong>Wasted Talent:</strong> Not utilizing workers' skills and experience</li>
+                    </ol>
+                    
+                    <h3>How to detect waste in your workplace?</h3>
+                    <p>Ask yourself these questions:</p>
+                    <ul>
+                        <li>Do you spend time waiting for something?</li>
+                        <li>Do you move more than necessary for work?</li>
+                        <li>Are there unnecessary steps in the work?</li>
+                        <li>Are there tools or materials not being used?</li>
+                        <li>Are there defective products?</li>
+                    </ul>
+                `
             },
             {
-                question: "كم عدد أنواع الهدر في منهجية الـ Lean؟",
-                options: [
-                    "5 أنواع",
-                    "8 أنواع", 
-                    "10 أنواع",
-                    "12 نوع"
-                ],
-                correct: 1
+                id: 3,
+                title: "Six Sigma Principles",
+                progress: 0,
+                content: `
+                    <h3>The Five Golden Steps - DMAIC Methodology</h3>
+                    
+                    <h4>1. Define</h4>
+                    <p><strong>Goal:</strong> Understand the problem clearly</p>
+                    <ul>
+                        <li>Define the problem precisely</li>
+                        <li>Identify who is affected</li>
+                        <li>Define the solution objective</li>
+                    </ul>
+                    
+                    <h4>2. Measure</h4>
+                    <p><strong>Goal:</strong> Collect accurate data about the problem</p>
+                    <ul>
+                        <li>Measure the current situation</li>
+                        <li>Collect numerical data</li>
+                        <li>Define performance metrics</li>
+                    </ul>
+                    
+                    <h4>3. Analyze</h4>
+                    <p><strong>Goal:</strong> Understand the real causes of the problem</p>
+                    <ul>
+                        <li>Analyze data</li>
+                        <li>Search for root causes</li>
+                        <li>Use analysis tools</li>
+                    </ul>
+                    
+                    <h4>4. Improve</h4>
+                    <p><strong>Goal:</strong> Develop and implement solutions</p>
+                    <ul>
+                        <li>Develop innovative solutions</li>
+                        <li>Test solutions on small scale</li>
+                        <li>Implement final solution</li>
+                    </ul>
+                    
+                    <h4>5. Control</h4>
+                    <p><strong>Goal:</strong> Maintain continuous improvement</p>
+                    <ul>
+                        <li>Monitor results</li>
+                        <li>Document procedures</li>
+                        <li>Train new workers</li>
+                    </ul>
+                `
             },
             {
-                question: "ما معنى كلمة Kaizen؟",
-                options: [
-                    "التغيير للأفضل",
-                    "التحسين السريع",
-                    "التدريب المستمر",
-                    "الجودة الشاملة"
-                ],
-                correct: 0
+                id: 4,
+                title: "Roles and Belt Levels in Six Sigma",
+                progress: 0,
+                content: `
+                    <h3>Belt Levels and Responsibilities</h3>
+                    
+                    <h4>1. White Belt - That's you</h4>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Basic understanding of principles</li>
+                        <li>Participation in simple improvements</li>
+                        <li>Providing feedback and suggestions</li>
+                        <li>Applying basic quality tools</li>
+                    </ul>
+                    
+                    <h4>2. Yellow Belt</h4>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Participation in improvement teams</li>
+                        <li>Data and information collection</li>
+                        <li>Applying simple quality tools</li>
+                        <li>Supporting improvement projects</li>
+                    </ul>
+                    
+                    <h4>3. Green Belt</h4>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Leading medium improvement projects</li>
+                        <li>Advanced data analysis</li>
+                        <li>Training and guiding White Belts</li>
+                        <li>Applying DMAIC methodology</li>
+                    </ul>
+                    
+                    <h4>4. Black Belt</h4>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Leading strategic major projects</li>
+                        <li>Training and supervising teams</li>
+                        <li>Developing improvement strategies</li>
+                        <li>Leading transformation initiatives</li>
+                    </ul>
+                    
+                    <h3>Career Development Plan at Fresh</h3>
+                    <p><strong>From White Belt to Yellow Belt:</strong></p>
+                    <ul>
+                        <li>Participation in 3 improvement projects</li>
+                        <li>Presenting 5 successful improvement ideas</li>
+                        <li>Passing promotion exam</li>
+                    </ul>
+                `
             },
             {
-                question: "ما هي المرحلة الأولى في منهجية DMAIC؟",
-                options: [
-                    "Define - التحديد",
-                    "Measure - القياس", 
-                    "Analyze - التحليل",
-                    "Improve - التحسين"
-                ],
-                correct: 0
+                id: 5,
+                title: "PDCA Cycle for Continuous Development",
+                progress: 0,
+                content: `
+                    <h3>What is the PDCA Cycle?</h3>
+                    <p>A continuous improvement cycle consisting of:</p>
+                    <ul>
+                        <li><strong>P = Plan</strong></li>
+                        <li><strong>D = Do</strong></li>
+                        <li><strong>C = Check</strong></li>
+                        <li><strong>A = Act</strong></li>
+                    </ul>
+                    
+                    <h3>1. PLAN</h3>
+                    <p><strong>Planning Steps:</strong></p>
+                    <ul>
+                        <li>Define the problem: What exactly is the problem?</li>
+                        <li>Understand current situation: How does the problem occur now?</li>
+                        <li>Analyze causes: Why does the problem occur?</li>
+                        <li>Set objectives: What do you want to achieve?</li>
+                        <li>Plan the solution: How will you solve the problem?</li>
+                    </ul>
+                    
+                    <h3>2. DO</h3>
+                    <p><strong>Implementation Steps:</strong></p>
+                    <ul>
+                        <li>Implement the plan: Apply solutions</li>
+                        <li>Collect data: Record what happens</li>
+                        <li>Record changes: Write all modifications</li>
+                    </ul>
+                    
+                    <h3>3. CHECK</h3>
+                    <p><strong>Review Steps:</strong></p>
+                    <ul>
+                        <li>Compare results: Before and after implementation</li>
+                        <li>Analyze data: Were objectives achieved?</li>
+                        <li>Learn from experience: What lessons were learned?</li>
+                    </ul>
+                    
+                    <h3>4. ACT</h3>
+                    <p><strong>Development Steps:</strong></p>
+                    <ul>
+                        <li>Standardize success: If solution worked, apply permanently</li>
+                        <li>Modify plan: If not successful, adjust and improve</li>
+                        <li>Expand scope: Apply to all similar lines</li>
+                    </ul>
+                    
+                    <h3>Relationship between PDCA and DMAIC</h3>
+                    <ul>
+                        <li>PDCA = For quick and continuous improvements</li>
+                        <li>DMAIC = For complex and deep problems</li>
+                        <li>Both together = Integrated improvement system</li>
+                    </ul>
+                `
             },
             {
-                question: "أي من الآتي يعد أحد أنواع الهدر الثمانية؟",
-                options: [
-                    "الانتظار",
-                    "الإبداع",
-                    "التخطيط",
-                    "التدريب"
-                ],
-                correct: 0
+                id: 6,
+                title: "Kaizen Culture",
+                progress: 0,
+                content: `
+                    <h3>What is Kaizen?</h3>
+                    <p><strong>Literal Meaning:</strong></p>
+                    <ul>
+                        <li>Kai = Change</li>
+                        <li>Zen = For the better</li>
+                        <li>Meaning: Continuous improvement for the better</li>
+                    </ul>
+                    
+                    <h3>Kaizen Philosophy</h3>
+                    <ol>
+                        <li><strong>Small continuous changes:</strong> Don't wait for big improvements, small daily improvements are better</li>
+                        <li><strong>Everyone's participation:</strong> From manager to last worker, every idea has value</li>
+                        <li><strong>Focus on processes:</strong> Improving processes leads to improved results</li>
+                    </ol>
+                    
+                    <h3>Kaizen Activities at Fresh Factory</h3>
+                    <ol>
+                        <li><strong>Individual improvement suggestions:</strong> Each worker presents weekly suggestions, reward system for implemented ideas</li>
+                        <li><strong>Small improvement teams:</strong> Small teams to solve specific problems, quick weekly meetings</li>
+                        <li><strong>Focused Kaizen events:</strong> Intensive activities for one week, focus on specific problem</li>
+                    </ol>
+                    
+                    <h3>How to apply Kaizen daily?</h3>
+                    <p><strong>Practical Steps:</strong></p>
+                    <ol>
+                        <li>Observe: Problem or area for improvement</li>
+                        <li>Analyze: Root cause</li>
+                        <li>Suggest: Simple solution</li>
+                        <li>Implement: On small scale</li>
+                        <li>Review: Results</li>
+                        <li>Standardize: Success</li>
+                    </ol>
+                    
+                    <h3>Basic Kaizen Principles</h3>
+                    <ol>
+                        <li>Eliminate traditional thinking: "It works, don't try", "There's always room for improvement"</li>
+                        <li>Look for solutions not excuses: "Didn't work before?", "Let's try a new way"</li>
+                        <li>Try then correct: "Must be 100% correct from first time" ← "Try, learn, develop"</li>
+                        <li>Suitable environment for improvement: No punishment for mistakes, encouraging initiatives, appreciating effort</li>
+                    </ol>
+                `
             },
             {
-                question: "ما هو الهدف من نظام 5S؟",
-                options: [
-                    "تنظيم مكان العمل",
-                    "زيادة الإنتاجية فقط",
-                    "تقليل التكاليف فقط", 
-                    "تحسين الجودة فقط"
-                ],
-                correct: 0
+                id: 7,
+                title: "5S System for Workplace Organization",
+                progress: 0,
+                content: `
+                    <h3>What is the 5S System?</h3>
+                    <p>A Japanese system for workplace organization consisting of:</p>
+                    <ul>
+                        <li><strong>SEIRI = Sort</strong></li>
+                        <li><strong>SEITON = Set in Order</strong></li>
+                        <li><strong>SEISO = Shine</strong></li>
+                        <li><strong>SEIKETSU = Standardize</strong></li>
+                        <li><strong>SHITSUKE = Sustain</strong></li>
+                    </ul>
+                    
+                    <h3>1. SEIRI (Sort)</h3>
+                    <p><strong>Principle:</strong> Get rid of what you don't need</p>
+                    <p><strong>Application at Fresh Factory:</strong></p>
+                    <ul>
+                        <li>Remove excess tools and materials</li>
+                        <li>Keep only what you use daily</li>
+                        <li>Dispose of broken equipment</li>
+                    </ul>
+                    
+                    <h3>2. SEITON (Set in Order)</h3>
+                    <p><strong>Principle:</strong> Everything in its designated place</p>
+                    <p><strong>Application at Factory:</strong></p>
+                    <ul>
+                        <li>Place labels and colors for tools</li>
+                        <li>Organize materials for easiest access</li>
+                        <li>Use organized shelves and drawers</li>
+                    </ul>
+                    
+                    <h3>3. SEISO (Shine)</h3>
+                    <p><strong>Principle:</strong> Cleanliness is part of work</p>
+                    <p><strong>Application at Factory:</strong></p>
+                    <ul>
+                        <li>Clean workplace daily</li>
+                        <li>Maintain equipment cleanliness</li>
+                        <li>Define cleaning responsibilities</li>
+                    </ul>
+                    
+                    <h3>4. SEIKETSU (Standardize)</h3>
+                    <p><strong>Principle:</strong> Unified system for everyone</p>
+                    <p><strong>Application at Factory:</strong></p>
+                    <ul>
+                        <li>Establish unified procedures</li>
+                        <li>Train all workers</li>
+                        <li>Clear standards for everyone</li>
+                    </ul>
+                    
+                    <h3>5. SHITSUKE (Sustain)</h3>
+                    <p><strong>Principle:</strong> Maintain the system</p>
+                    <p><strong>Application at Factory:</strong></p>
+                    <ul>
+                        <li>Periodic review</li>
+                        <li>Motivate committed workers</li>
+                        <li>Continuous improvement</li>
+                    </ul>
+                `
             },
             {
-                question: "ما هي النسبة المئوية المطلوبة لاجتياز امتحان White Belt؟",
-                options: [
-                    "50%",
-                    "60%",
-                    "70%",
-                    "80%"
-                ],
-                correct: 2
+                id: 8,
+                title: "Advanced Problem Analysis Tools",
+                progress: 0,
+                content: `
+                    <h3>1. Fishbone Diagram (Ishikawa)</h3>
+                    <p><strong>What is it?</strong> Diagram resembling fishbone, organizes potential problem causes, helps comprehensive analysis</p>
+                    
+                    <h4>How to use it at Fresh?</h4>
+                    <p><strong>Application Steps:</strong></p>
+                    <ol>
+                        <li>Write problem at fish head</li>
+                        <li>Draw main lines (fish bones)</li>
+                        <li>Identify main cause categories</li>
+                        <li>Add detailed causes under each category</li>
+                    </ol>
+                    
+                    <p><strong>Main Categories (6M):</strong></p>
+                    <ul>
+                        <li>Materials - Raw materials, components</li>
+                        <li>Machines - Equipment, tools</li>
+                        <li>Manpower - Workers, skills</li>
+                        <li>Methods - Procedures, instructions</li>
+                        <li>Measurement - Measuring tools, standards</li>
+                        <li>Environment - Place, conditions</li>
+                    </ul>
+                    
+                    <h3>2. Pareto Analysis</h3>
+                    <p><strong>What is it?</strong> 80/20 rule: 80% of problems caused by 20% of causes, helps prioritize</p>
+                    
+                    <h4>How to apply it at Fresh?</h4>
+                    <p><strong>Application Steps:</strong></p>
+                    <ol>
+                        <li>Collect data about problems</li>
+                        <li>Arrange descending by frequency</li>
+                        <li>Calculate percentage for each problem</li>
+                        <li>Calculate cumulative percentage</li>
+                        <li>Identify critical problems (the 20%)</li>
+                    </ol>
+                    
+                    <h3>3. 5 Whys Technique</h3>
+                    <p><strong>Simple Principle:</strong> Ask "why" 5 times to reach root cause</p>
+                    
+                    <h4>Application Steps:</h4>
+                    <ol>
+                        <li>Write problem clearly</li>
+                        <li>Ask "why did the problem occur?"</li>
+                        <li>Write the answer</li>
+                        <li>Repeat question 5 times</li>
+                        <li>Reach root cause</li>
+                    </ol>
+                    
+                    <h3>4. Flow Chart</h3>
+                    <p><strong>What is it?</strong> Graphic diagram showing process steps, helps understand processes and identify improvement areas</p>
+                    
+                    <h4>Chart Symbols:</h4>
+                    <ul>
+                        <li>Oval = Start/End</li>
+                        <li>Rectangle = Process step</li>
+                        <li>Diamond = Decision (yes/no)</li>
+                        <li>Arrows = Flow direction</li>
+                    </ul>
+                `
             },
             {
-                question: "أي من الأدوات التالية تستخدم لتحديد السبب الجذري للمشكلة؟",
-                options: [
-                    "مخطط عظمة السمكة",
-                    "تحليل باريتو",
-                    "تقنية 5 Whys",
-                    "جميع ما سبق"
-                ],
-                correct: 3
+                id: 9,
+                title: "Performance and Quality Indicators",
+                progress: 0,
+                content: `
+                    <h3>What are Performance Indicators?</h3>
+                    <p>Numbers and data measuring process performance and product quality, help in:</p>
+                    <ul>
+                        <li>Evaluating current situation</li>
+                        <li>Identifying problems</li>
+                        <li>Measuring improvement</li>
+                        <li>Making decisions</li>
+                    </ul>
+                    
+                    <h3>Types of Indicators at Fresh Factory</h3>
+                    
+                    <h4>1. Quality Indicators</h4>
+                    <ul>
+                        <li><strong>Defect Rate:</strong> Percentage of defective products from total</li>
+                        <li><strong>Rework Rate:</strong> Percentage of products needing repair</li>
+                        <li><strong>Customer Complaints:</strong> Number and frequency of complaints</li>
+                    </ul>
+                    
+                    <h4>2. Productivity Indicators</h4>
+                    <ul>
+                        <li><strong>Production Rate:</strong> Number of units produced per hour</li>
+                        <li><strong>Cycle Time:</strong> Time needed to produce one unit</li>
+                        <li><strong>Equipment Utilization:</strong> Percentage of actual working time</li>
+                    </ul>
+                    
+                    <h4>3. Safety Indicators</h4>
+                    <ul>
+                        <li><strong>Accidents:</strong> Number of accidents and injuries</li>
+                        <li><strong>Lost Work Days:</strong> Stop days due to accidents</li>
+                        <li><strong>Safety Violations:</strong> Number of discovered violations</li>
+                    </ul>
+                    
+                    <h3>How to read and use indicators?</h3>
+                    <p><strong>Practical Steps:</strong></p>
+                    <ol>
+                        <li>Understand indicator meaning</li>
+                        <li>Compare with required target</li>
+                        <li>Analyze change direction (improving or worsening)</li>
+                        <li>Search for causes</li>
+                        <li>Take corrective action</li>
+                    </ol>
+                    
+                    <h3>Visual Control Boards</h3>
+                    <p><strong>What are they?</strong> Boards showing indicators in simple visual form, help in:</p>
+                    <ul>
+                        <li>Easy performance monitoring</li>
+                        <li>Quick problem detection</li>
+                        <li>Sharing information with everyone</li>
+                    </ul>
+                    
+                    <h4>Types of Boards at Fresh:</h4>
+                    <ul>
+                        <li>Daily production boards</li>
+                        <li>Quality boards</li>
+                        <li>Safety boards</li>
+                        <li>Improvement boards</li>
+                    </ul>
+                `
             },
             {
-                question: "ما هو دور الحزام الأبيض White Belt في Six Sigma؟",
-                options: [
-                    "الفهم الأساسي للمبادئ والمشاركة في التحسينات البسيطة",
-                    "قيادة مشاريع التحسين الكبرى",
-                    "تدريب الأحزمة الأخرى",
-                    "وضع استراتيجيات التحسين"
-                ],
-                correct: 0
-            },
-            {
-                question: "ما الفرق الرئيسي بين Lean و Six Sigma؟",
-                options: [
-                    "Lean يركز على التخلص من الهدر وSix Sigma يركز على تقليل الأخطاء",
-                    "Lean لتحسين الجودة وSix Sigma لتحسين السرعة",
-                    "Lean للصناعة وSix Sigma للخدمات",
-                    "لا يوجد فرق بينهما"
-                ],
-                correct: 0
-            },
-            {
-                question: "ما هي دورة PDCA؟",
-                options: [
-                    "دورة مستمرة للتحسين تتكون من Plan-Do-Check-Act",
-                    "دورة للتدريب تتكون من Prepare-Demonstrate-Confirm-Assess",
-                    "دورة للإنتاج تتكون من Produce-Distribute-Consume-Analyze",
-                    "دورة للجودة تتكون من Plan-Design-Create-Assess"
-                ],
-                correct: 0
-            },
-            {
-                question: "ما هو نوع الهدر عندما ينتظر العمال مواد أو تعليمات؟",
-                options: [
-                    "الهدر في الانتظار",
-                    "الهدر في الحركة",
-                    "الهدر في المواهب", 
-                    "الهدر في النقل"
-                ],
-                correct: 0
-            },
-            {
-                question: "كم مرة يجب أن تسأل 'لماذا' في تقنية 5 Whys؟",
-                options: [
-                    "3 مرات",
-                    "5 مرات",
-                    "7 مرات", 
-                    "10 مرات"
-                ],
-                correct: 1
-            },
-            {
-                question: "ما هو الهدف من تطبيق ثقافة الكايزن في المصنع؟",
-                options: [
-                    "التحسين المستمر من خلال تغييرات صغيرة مستمرة",
-                    "التغيير الجذري في عمليات المصنع",
-                    "تقليل عدد العاملين",
-                    "زيادة رأس المال"
-                ],
-                correct: 0
-            },
-            {
-                question: "أي من المراحل التالية تأتي بعد مرحلة التحليل في DMAIC؟",
-                options: [
-                    "مرحلة التحسين",
-                    "مرحلة التحديد",
-                    "مرحلة القياس",
-                    "مرحلة التحكم"
-                ],
-                correct: 0
-            },
-            {
-                question: "ما هو أول خطوة في تطبيق نظام 5S؟",
-                options: [
-                    "التصنيف (Sort)",
-                    "الترتيب (Set in order)",
-                    "التنظيف (Shine)",
-                    "التوحيد (Standardize)"
-                ],
-                correct: 0
-            },
-            {
-                question: "ما هي القاعدة المستخدمة في تحليل باريتو؟",
-                options: [
-                    "80/20 - 80% من المشاكل سببها 20% من الأسباب",
-                    "70/30 - 70% من المشاكل سببها 30% من الأسباب", 
-                    "60/40 - 60% من المشاكل سببها 40% من الأسباب",
-                    "90/10 - 90% من المشاكل سببها 10% من الأسباب"
-                ],
-                correct: 0
-            },
-            {
-                question: "ما هو الهدر الناتج عن تخزين مواد أكثر من الحاجة الفعلية؟",
-                options: [
-                    "الهدر في المخزون الزائد",
-                    "الهدر في الانتظار",
-                    "الهدر في العيوب",
-                    "الهدر في النقل"
-                ],
-                correct: 0
-            },
-            {
-                question: "ما هو الهدف من مرحلة التحكم في DMAIC؟",
-                options: [
-                    "الحفاظ على التحسين مستمراً",
-                    "تحديد المشكلة",
-                    "تحليل البيانات",
-                    "تطوير الحلول"
-                ],
-                correct: 0
-            },
-            {
-                question: "ما هي المدة الزمنية لامتحان White Belt؟",
-                options: [
-                    "20 دقيقة",
-                    "30 دقيقة", 
-                    "45 دقيقة",
-                    "60 دقيقة"
-                ],
-                correct: 1
+                id: 10,
+                title: "Practical Application at Fresh Factory",
+                progress: 0,
+                content: `
+                    <h3>How to apply Lean Six Sigma at Fresh Factory?</h3>
+                    
+                    <h4>1. In Desert Cooler Production Line</h4>
+                    <p><strong>Improvement Areas:</strong></p>
+                    <ul>
+                        <li>Reduce unit assembly time</li>
+                        <li>Improve welding quality</li>
+                        <li>Reduce raw material waste</li>
+                        <li>Improve final testing efficiency</li>
+                    </ul>
+                    
+                    <h4>2. In Microwave Production Line</h4>
+                    <p><strong>Improvement Areas:</strong></p>
+                    <ul>
+                        <li>Improve electronic component installation accuracy</li>
+                        <li>Reduce rework welding</li>
+                        <li>Improve visual inspection efficiency</li>
+                        <li>Reduce calibration adjustment time</li>
+                    </ul>
+                    
+                    <h3>Specific Improvement Projects for Workers</h3>
+                    
+                    <h4>Project 1: Improve Workplace Organization</h4>
+                    <p><strong>Objectives:</strong></p>
+                    <ul>
+                        <li>Apply 5S system in all stations</li>
+                        <li>Reduce tool search time by 50%</li>
+                        <li>Improve workplace safety</li>
+                    </ul>
+                    
+                    <h4>Project 2: Reduce Welding Defects</h4>
+                    <p><strong>Objectives:</strong></p>
+                    <ul>
+                        <li>Reduce defective welding rate from 5% to 2%</li>
+                        <li>Standardize welding procedures</li>
+                        <li>Train all welding workers</li>
+                    </ul>
+                    
+                    <h4>Project 3: Improve Assembly Line Efficiency</h4>
+                    <p><strong>Objectives:</strong></p>
+                    <ul>
+                        <li>Balance production line</li>
+                        <li>Reduce waiting time between stations</li>
+                        <li>Increase productivity by 15%</li>
+                    </ul>
+                    
+                    <h3>Your Role as White Belt in Improvement</h3>
+                    <p><strong>Your Responsibilities:</strong></p>
+                    <ul>
+                        <li>Present weekly improvement suggestions</li>
+                        <li>Participate in improvement teams</li>
+                        <li>Apply quality tools in your work</li>
+                        <li>Help collect data</li>
+                        <li>Spread quality culture among colleagues</li>
+                    </ul>
+                    
+                    <h3>Reward and Recognition System</h3>
+                    <p><strong>Types of Rewards:</strong></p>
+                    <ul>
+                        <li>Financial rewards for implemented ideas</li>
+                        <li>Certificates of appreciation for excellence</li>
+                        <li>Job promotions for outstanding performers</li>
+                        <li>Monthly recognition for best improvement suggestion</li>
+                    </ul>
+                `
             }
         ];
 
@@ -1174,13 +1615,6 @@
         let currentLanguage = 'ar';
         let currentModuleIndex = 0;
         let isDarkMode = false;
-        
-        // متغيرات الامتحان
-        let examTimer;
-        let timeLeft = 30 * 60; // 30 دقيقة بالثواني
-        let currentQuestion = 0;
-        let userAnswers = [];
-        let studentName = "";
 
         // تهيئة التطبيق
         document.addEventListener('DOMContentLoaded', function() {
@@ -1196,13 +1630,6 @@
             document.getElementById('themeSwitch').addEventListener('click', toggleTheme);
             document.getElementById('closeModal').addEventListener('click', closeModal);
             document.getElementById('nextModule').addEventListener('click', showNextModule);
-            
-            // أحداث الامتحان
-            document.getElementById('startExam').addEventListener('click', startExam);
-            document.getElementById('prevQuestion').addEventListener('click', prevQuestion);
-            document.getElementById('nextQuestion').addEventListener('click', nextQuestion);
-            document.getElementById('submitExam').addEventListener('click', submitExam);
-            document.getElementById('downloadCertificate').addEventListener('click', downloadCertificate);
             
             // إضافة مستمع للتمرير لتفعيل الأنيميشن
             window.addEventListener('scroll', checkVisibility);
@@ -1354,7 +1781,6 @@
                 '#feature2Desc': currentLanguage === 'ar' ? 'تركيز على التطبيق العملي وأمثلة من بيئة العمل الحقيقية' : 'Focus on practical application and examples from real work environment',
                 '#feature3Title': currentLanguage === 'ar' ? 'شهادة معتمدة' : 'Certified Certificate',
                 '#feature3Desc': currentLanguage === 'ar' ? 'شهادة إتمام معتمدة من إدارة العمليات والجودة بالمصنع' : 'Completion certificate certified by factory Operations and Quality Management',
-                '#examTitle': currentLanguage === 'ar' ? 'امتحان الشهادة' : 'Certificate Exam',
                 '#footerAboutTitle': currentLanguage === 'ar' ? 'عن البرنامج' : 'About the Program',
                 '#footerAboutDesc': currentLanguage === 'ar' ? 'تم إعداد هذا الكورس خصيصاً لعمال إنتاج مصنع المبرد الصحراوي والميكروويف بشركة فريش، مع مراعاة طبيعة العمل والعمليات الإنتاجية بالمصنع.' : 'This course has been specially prepared for the production workers of the Desert Cooler and Microwave factory at Fresh Company, taking into account the nature of work and production processes in the factory.',
                 '#footerContactTitle': currentLanguage === 'ar' ? 'معلومات الاتصال' : 'Contact Information',
@@ -1364,7 +1790,6 @@
                 '#navHome': currentLanguage === 'ar' ? 'الرئيسية' : 'Home',
                 '#navModules': currentLanguage === 'ar' ? 'الوحدات' : 'Modules',
                 '#navAbout': currentLanguage === 'ar' ? 'عن البرنامج' : 'About',
-                '#navExam': currentLanguage === 'ar' ? 'الامتحان' : 'Exam',
                 '#navContact': currentLanguage === 'ar' ? 'اتصل بنا' : 'Contact'
             };
             
@@ -1392,182 +1817,6 @@
                 if (cardTop < triggerBottom) {
                     card.classList.add('visible');
                 }
-            });
-        }
-
-        // وظائف الامتحان
-        function startExam() {
-            studentName = document.getElementById('studentName').value.trim();
-            
-            if (!studentName) {
-                alert(currentLanguage === 'ar' ? 'يرجى إدخال اسمك بالكامل' : 'Please enter your full name');
-                return;
-            }
-            
-            // إخفاء تسجيل الامتحان وإظهار واجهة الامتحان
-            document.getElementById('examRegistration').style.display = 'none';
-            document.getElementById('examInterface').style.display = 'block';
-            
-            // تهيئة متغيرات الامتحان
-            currentQuestion = 0;
-            userAnswers = new Array(examQuestions.length).fill(-1);
-            timeLeft = 30 * 60; // 30 دقيقة
-            
-            // بدء المؤقت
-            startTimer();
-            
-            // عرض السؤال الأول
-            displayQuestion();
-        }
-
-        function startTimer() {
-            updateTimerDisplay();
-            
-            examTimer = setInterval(function() {
-                timeLeft--;
-                updateTimerDisplay();
-                
-                if (timeLeft <= 0) {
-                    clearInterval(examTimer);
-                    submitExam();
-                }
-            }, 1000);
-        }
-
-        function updateTimerDisplay() {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            document.getElementById('timer').textContent = 
-                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
-
-        function displayQuestion() {
-            const questionContainer = document.getElementById('questionContainer');
-            const question = examQuestions[currentQuestion];
-            
-            document.getElementById('questionCounter').textContent = 
-                `${currentLanguage === 'ar' ? 'السؤال' : 'Question'} ${currentQuestion + 1} ${currentLanguage === 'ar' ? 'من' : 'of'} ${examQuestions.length}`;
-            
-            let optionsHTML = '';
-            question.options.forEach((option, index) => {
-                const isSelected = userAnswers[currentQuestion] === index;
-                optionsHTML += `
-                    <li class="option ${isSelected ? 'selected' : ''}" data-index="${index}">
-                        ${option}
-                    </li>
-                `;
-            });
-            
-            questionContainer.innerHTML = `
-                <div class="question-text">${question.question}</div>
-                <ul class="options">${optionsHTML}</ul>
-            `;
-            
-            // إضافة مستمعي الأحداث للخيارات
-            document.querySelectorAll('.option').forEach(option => {
-                option.addEventListener('click', function() {
-                    const selectedIndex = parseInt(this.getAttribute('data-index'));
-                    userAnswers[currentQuestion] = selectedIndex;
-                    
-                    // تحديث المظهر
-                    document.querySelectorAll('.option').forEach(opt => {
-                        opt.classList.remove('selected');
-                    });
-                    this.classList.add('selected');
-                });
-            });
-            
-            // تحديث أزرار التنقل
-            document.getElementById('prevQuestion').disabled = currentQuestion === 0;
-            document.getElementById('nextQuestion').style.display = 
-                currentQuestion < examQuestions.length - 1 ? 'block' : 'none';
-            document.getElementById('submitExam').style.display = 
-                currentQuestion === examQuestions.length - 1 ? 'block' : 'none';
-        }
-
-        function prevQuestion() {
-            if (currentQuestion > 0) {
-                currentQuestion--;
-                displayQuestion();
-            }
-        }
-
-        function nextQuestion() {
-            if (currentQuestion < examQuestions.length - 1) {
-                currentQuestion++;
-                displayQuestion();
-            }
-        }
-
-        function submitExam() {
-            clearInterval(examTimer);
-            
-            // حساب النتيجة
-            let correctAnswers = 0;
-            userAnswers.forEach((answer, index) => {
-                if (answer === examQuestions[index].correct) {
-                    correctAnswers++;
-                }
-            });
-            
-            const score = (correctAnswers / examQuestions.length) * 100;
-            const passed = score >= 70;
-            
-            // عرض النتائج
-            showResults(score, passed, correctAnswers);
-        }
-
-        function showResults(score, passed, correctAnswers) {
-            document.getElementById('examInterface').style.display = 'none';
-            document.getElementById('examResults').style.display = 'block';
-            
-            const resultsContainer = document.getElementById('examResults');
-            
-            if (passed) {
-                resultsContainer.innerHTML = `
-                    <div class="results-icon success">🎉</div>
-                    <h3>${currentLanguage === 'ar' ? 'مبروك! لقد نجحت في الامتحان' : 'Congratulations! You passed the exam'}</h3>
-                    <div class="score">${score.toFixed(1)}%</div>
-                    <p>${currentLanguage === 'ar' ? `لقد أجبت بشكل صحيح على ${correctAnswers} من ${examQuestions.length} سؤال` : `You answered ${correctAnswers} out of ${examQuestions.length} questions correctly`}</p>
-                    <div class="certificate-download">
-                        <button class="cta-button" id="showCertificate">${currentLanguage === 'ar' ? 'عرض الشهادة' : 'View Certificate'}</button>
-                    </div>
-                `;
-                
-                document.getElementById('showCertificate').addEventListener('click', showCertificate);
-            } else {
-                resultsContainer.innerHTML = `
-                    <div class="results-icon failure">😔</div>
-                    <h3>${currentLanguage === 'ar' ? 'لم تنجح في الامتحان' : 'You did not pass the exam'}</h3>
-                    <div class="score">${score.toFixed(1)}%</div>
-                    <p>${currentLanguage === 'ar' ? `لقد أجبت بشكل صحيح على ${correctAnswers} من ${examQuestions.length} سؤال` : `You answered ${correctAnswers} out of ${examQuestions.length} questions correctly`}</p>
-                    <p>${currentLanguage === 'ar' ? 'تحتاج إلى 70% على الأقل لاجتياز الامتحان. يمكنك المحاولة مرة أخرى.' : 'You need at least 70% to pass the exam. You can try again.'}</p>
-                    <div class="certificate-download">
-                        <button class="cta-button" onclick="location.reload()">${currentLanguage === 'ar' ? 'إعادة المحاولة' : 'Try Again'}</button>
-                    </div>
-                `;
-            }
-        }
-
-        function showCertificate() {
-            document.getElementById('examResults').style.display = 'none';
-            document.getElementById('certificate').style.display = 'block';
-            document.getElementById('certificateName').textContent = studentName;
-        }
-
-        function downloadCertificate() {
-            const certificate = document.getElementById('certificate');
-            
-            html2canvas(certificate).then(canvas => {
-                const imgData = canvas.toDataURL('image/png');
-                const { jsPDF } = window.jspdf;
-                const pdf = new jsPDF('l', 'mm', 'a4');
-                
-                const imgWidth = 297; // A4 width in mm
-                const imgHeight = canvas.height * imgWidth / canvas.width;
-                
-                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-                pdf.save(`شهادة_${studentName}_Lean_Six_Sigma_White_Belt.pdf`);
             });
         }
     </script>
