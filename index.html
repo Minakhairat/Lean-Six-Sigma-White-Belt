@@ -721,7 +721,6 @@
                     <li><a href="#modules" id="navModules">الوحدات</a></li>
                     <li><a href="#about" id="navAbout">عن البرنامج</a></li>
                     <li><a href="#exam" id="navExam">الامتحان</a></li>
-                    <li><a href="#contact" id="navContact">اتصل بنا</a></li>
                 </ul>
             </nav>
             <div class="controls">
@@ -758,7 +757,7 @@
                 <div class="about-features">
                     <div class="feature">
                         <h4 id="feature1Title">محتوى مخصص</h4>
-                        <p id="feature1Desc">محتوى مصمم خصيصاً لاحتياجات مصنع فريش وتحدياته</p>
+                        <p id="feature1Desc">محتوى مصمم خصيصاً لاحتياجات مصنع المبرد الصحراوي و الميكروويف وتحدياته</p>
                     </div>
                     <div class="feature">
                         <h4 id="feature2Title">تدريب عملي</h4>
@@ -831,10 +830,10 @@
                 </div>
                 
                 <div class="certificate-body">
-                    <p class="certificate-text">تهنئ إدارة العمليات والجودة</p>
+                    <p class="certificate-text">تهنئ إدارة العمليات</p>
                     <h2 class="student-name" id="certificateName">اسم الطالب</h2>
                     <p class="certificate-text">لاجتيازه امتحان Lean Six Sigma White Belt بنجاح</p>
-                    <p class="certificate-text">وذلك تقديراً لجهوده في إكمال البرنامج التدريبي بنجاح والتزامه بتطبيق مبادئ الجودة والتحسين المستمر</p>
+                    <p class="certificate-text">وذلك تقديراً لجهوده في إكمال البرنامج التدريبي بنجاح والتزامه بتطبيق مبادئ العمليات و الجودة والتحسين المستمر</p>
                 </div>
                 
                 <div class="certificate-footer">
@@ -882,9 +881,9 @@
                 </div>
                 <div class="footer-section">
                     <h3 id="footerContactTitle">معلومات الاتصال</h3>
-                    <p>إدارة العمليات والجودة</p>
-                    <p>مصنع المبرد الصحراوي والميكروويف</p>
-                    <p>شركة فريش للأجهزة المنزلية</p>
+                    <p id="department">إدارة العمليات</p>
+                    <p id="factory">مصنع المبرد الصحراوي والميكروويف</p>
+                    <p id="company">شركة فريش للأجهزة المنزلية</p>
                 </div>
                 <div class="footer-section">
                     <h3 id="footerFollowTitle">تابعنا</h3>
@@ -892,7 +891,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p id="footerCopyright">&copy; 2024 Lean Six Sigma White Belt Training. جميع الحقوق محفوظة.</p>
+              <p id="footerCopyright">تم تطويره لتطوير الأداء في العمليات الإنتاجية © 2025</p>
+		<p id="footerCopyright1">جميع الحقوق محفوظة للمهندس مينا خيرت</p>
+          
             </div>
         </div>
     </footer>
@@ -2346,12 +2347,18 @@
                 '#footerContactTitle': currentLanguage === 'ar' ? 'معلومات الاتصال' : 'Contact Information',
                 '#footerFollowTitle': currentLanguage === 'ar' ? 'تابعنا' : 'Follow Us',
                 '#footerFollowDesc': currentLanguage === 'ar' ? 'تابعنا على وسائل التواصل الاجتماعي للحصول على آخر التحديثات والدورات الجديدة.' : 'Follow us on social media to get the latest updates and new courses.',
-                '#footerCopyright': currentLanguage === 'ar' ? '&copy; 2024 Lean Six Sigma White Belt Training. جميع الحقوق محفوظة.' : '&copy; 2024 Lean Six Sigma White Belt Training. All rights reserved.',
+                '#footerCopyright': currentLanguage === 'ar' ? 'تم تطويره لتطوير الأداء في العمليات الإنتاجية © 2025' : 'Developed for performance improvement in production processes © 2025',
+		'#footerCopyright1': currentLanguage === 'ar' ? 'جميع الحقوق محفوظة للمهندس مينا خيرت' : 'All rights reserved to Engineer Mina Khairat',
                 '#navHome': currentLanguage === 'ar' ? 'الرئيسية' : 'Home',
                 '#navModules': currentLanguage === 'ar' ? 'الوحدات' : 'Modules',
                 '#navAbout': currentLanguage === 'ar' ? 'عن البرنامج' : 'About',
                 '#navExam': currentLanguage === 'ar' ? 'الامتحان' : 'Exam',
-                '#navContact': currentLanguage === 'ar' ? 'اتصل بنا' : 'Contact'
+                '#navContact': currentLanguage === 'ar' ? 'اتصل بنا' : 'Contact',
+		'#department': currentLanguage === 'ar' ? 'إدارة العمليات' : 'Process Department',
+		'#factory': currentLanguage === 'ar' ? 'مصنع المبرد الصحراوي والميكروويف' : 'AirCooler and Microwave Factory',
+		'#company': currentLanguage === 'ar' ? 'شركة فريش للأجهزة المنزلية' : 'Fresh Company for Home Appliances',
+
+
             };
             
             for (const selector in elementsToUpdate) {
