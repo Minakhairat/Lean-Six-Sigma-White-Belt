@@ -775,7 +775,7 @@
 					<div class="feature">
     <h4 id="feature4Title">العرض التفاعلي</h4>
     <p id="feature4Desc">عرض تقديمي تفاعلي شامل يشرح جميع مفاهيم البرنامج</p>
-    <button class="cta-button download-ppt" onclick="downloadPresentation()">
+    <button class="cta-button download-ppt" onclick="downloadPresentation()" id="ppt">
         تحميل العرض التقديمي
     </button>
 </div>
@@ -2372,7 +2372,7 @@
 				// إضافة هذا في قسم الترجمة الإنجليزية
 '#feature4Title': currentLanguage === 'ar' ? 'العرض التفاعلي' : 'Interactive Presentation',
 '#feature4Desc': currentLanguage === 'ar' ? 'عرض تقديمي تفاعلي شامل يشرح جميع مفاهيم البرنامج' : 'Comprehensive interactive presentation explaining all program concepts',
-
+'#ppt': currentLanguage === 'ar'? 'تحميل العرض التقديمي' : 'Download the presentation',
 
             };
             
