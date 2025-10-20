@@ -706,6 +706,11 @@
             .signature {
                 width: 100%;
             }
+			.download-ppt {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
         }
     </style>
 </head>
@@ -768,9 +773,12 @@
                         <p id="feature3Desc">شهادة إتمام معتمدة من إدارة العمليات والجودة بالمصنع</p>
                     </div>
 					<div class="feature">
-                        <h4 id="feature3Title">محتوي العرض التفاعلي</h4>
-                        <p id="feature3Desc">https://github.com/Minakhairat/Lean-Six-Sigma-White-Belt/blob/88f251781d0f2abde61704b08189a06c0f88271a/Lean-Six-Sigma-White-Belt.pptx</p>
-                    </div>
+    <h4 id="feature4Title">العرض التفاعلي</h4>
+    <p id="feature4Desc">عرض تقديمي تفاعلي شامل يشرح جميع مفاهيم البرنامج</p>
+    <button class="cta-button download-ppt" onclick="downloadPresentation()">
+        تحميل العرض التقديمي
+    </button>
+</div>
                 </div>
             </div>
         </div>
@@ -2361,6 +2369,9 @@
 		'#department': currentLanguage === 'ar' ? 'إدارة العمليات' : 'Process Department',
 		'#factory': currentLanguage === 'ar' ? 'مصنع المبرد الصحراوي والميكروويف' : 'AirCooler and Microwave Factory',
 		'#company': currentLanguage === 'ar' ? 'شركة فريش للأجهزة المنزلية' : 'Fresh Company for Home Appliances',
+				// إضافة هذا في قسم الترجمة الإنجليزية
+'#feature4Title': currentLanguage === 'ar' ? 'العرض التفاعلي' : 'Interactive Presentation',
+'#feature4Desc': currentLanguage === 'ar' ? 'عرض تقديمي تفاعلي شامل يشرح جميع مفاهيم البرنامج' : 'Comprehensive interactive presentation explaining all program concepts',
 
 
             };
@@ -2611,6 +2622,21 @@
                 certificate.style.display = 'none';
             });
         }
+		function downloadPresentation() {
+    // رابط تحميل الباوربوينت
+    const pptUrl = 'https://github.com/Minakhairat/Lean-Six-Sigma-White-Belt/raw/refs/heads/main/Lean-Six-Sigma-White-Belt.pptx';
+    
+    // إنشاء رابط تحميل
+    const link = document.createElement('a');
+    link.href = pptUrl;
+    link.download = 'Lean-Six-Sigma-White-Belt.pptx';
+    link.target = '_blank';
+    
+    // إضافة الرابط للصفحة والنقر عليه برمجياً
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
     </script>
 </body>
 </html>
